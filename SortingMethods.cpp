@@ -5,7 +5,7 @@
 using namespace std;
 
 //Метод выбора
-void sortSelect(int* a, int n, int &g)
+void sortSelect(int* a, int n, int& g)
 {
 	int temp;
 	int lowindex, lowkey, i, j;
@@ -13,7 +13,7 @@ void sortSelect(int* a, int n, int &g)
 	{
 		lowindex = i;
 		lowkey = a[i];
-		for (j = i + 1; j < n; j++) 
+		for (j = i + 1; j < n; j++)
 		{
 			if (a[j] < lowkey)
 			{
@@ -37,7 +37,7 @@ void sortBubble(int* a, int n, int& g)
 	{
 		for (j = n - 1; j > i; j--)
 		{
-			if (a[j] < a[j - 1]) 
+			if (a[j] < a[j - 1])
 			{
 				temp = a[j];
 				a[j] = a[j - 1];
@@ -53,7 +53,7 @@ void sortInsert(int* a, int n, int& g)
 {
 	int temp;
 	int i, j;
-	for(i = 2; i < n; i++) 
+	for (i = 2; i < n; i++)
 	{
 		j = i;
 		while (a[j] < a[j - 1])
@@ -104,13 +104,13 @@ int main()
 
 	//Объявление двумерного массива
 	int** a = new int* [n];
-	for(int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 		a[i] = new int[m];
 
 	//Заполнение двумерного массива рандомными значениями
 	srand(time(NULL));
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < m; j++)
 			a[i][j] = -1000 + rand() % 2001;
 
 	cout << endl << "1 - Сортировка методом ВЫБОРА" << endl;
@@ -130,7 +130,7 @@ int main()
 		const auto dt = std::chrono::steady_clock::now() - tm;
 		sec = chrono::duration_cast<chrono::milliseconds>(dt).count();
 	}
-		break;
+		  break;
 	case 2: {
 		const auto tm = std::chrono::steady_clock::now();
 		for (int i = 0; i < n; i++) {
@@ -139,7 +139,7 @@ int main()
 		const auto dt = std::chrono::steady_clock::now() - tm;
 		sec = chrono::duration_cast<chrono::milliseconds>(dt).count();
 	}
-		break;
+		  break;
 	case 3: {
 		const auto tm = std::chrono::steady_clock::now();
 		for (int i = 0; i < n; i++) {
@@ -148,7 +148,7 @@ int main()
 		const auto dt = std::chrono::steady_clock::now() - tm;
 		sec = chrono::duration_cast<chrono::milliseconds>(dt).count();
 	}
-		break;
+		  break;
 	case 4: {
 		const auto tm = std::chrono::steady_clock::now();
 		for (int i = 0; i < n; i++) {
@@ -157,11 +157,11 @@ int main()
 		const auto dt = std::chrono::steady_clock::now() - tm;
 		sec = chrono::duration_cast<chrono::milliseconds>(dt).count();
 	}
-		break;
+		  break;
 	default: {
 		cout << "Такой сортировки в списке нет";
 	}
-		break;
+		   break;
 	}
 
 	//Вывод
